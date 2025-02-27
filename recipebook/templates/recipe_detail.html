@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {{ object.name }}
+  <ul>
+      {% for ingredient in object.ingredients.all %}
+          <li>{{ ingredient.ingredient.name }}: {{ ingredient.quantity }}</li>
+      {% endfor %}
+  </ul>
+{% endblock %}
