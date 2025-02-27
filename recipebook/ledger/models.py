@@ -21,7 +21,7 @@ class Recipe(models.Model):
     return reverse('recipe', args=[str(self.name)])
 
 class RecipeIngredient(models.Model):
-  quantity = models.IntegerField()
+  quantity = models.FloatField()
   ingredient = models.ForeignKey(
     Ingredient,
     on_delete=models.CASCADE,
