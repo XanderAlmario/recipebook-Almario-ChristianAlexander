@@ -9,7 +9,6 @@ class RecipeListView(ListView):
     model = Recipe
     template_name = 'recipe_list.html'
 
-class RecipeDetailView(LoginRequiredMixin, DetailView):
+class RecipeDetailView(DetailView):
     model = Recipe
     template_name = 'recipe_detail.html'
-    redirect_field_name = ''
