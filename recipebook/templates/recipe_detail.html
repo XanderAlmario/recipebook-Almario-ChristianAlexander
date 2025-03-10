@@ -2,6 +2,9 @@
 
 {% block content %}
   {{ object.name }}
+  <p>Created by: {{ object.author }}</p>
+  <p>Created on: {{ object.CreatedOn }}</p>
+  <p>Updated on: {{ object.UpdatedOn }}</p>
   <ul>
       {% for ingredient in object.ingredients.all %}
           <li>{{ ingredient.ingredient.name }}: {{ ingredient.quantity }}</li>
