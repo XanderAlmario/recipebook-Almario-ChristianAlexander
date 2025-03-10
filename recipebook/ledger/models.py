@@ -36,8 +36,3 @@ class RecipeIngredient(models.Model):
     on_delete=models.CASCADE,
     related_name='ingredients'
   )
-  
-class Profile(models.Model):
-  user = models.OneToOneField(User, on_delete=models.CASCADE)
-  name = models.CharField(max_length=50)
-  bio = models.TextField()
