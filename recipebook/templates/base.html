@@ -1,7 +1,18 @@
 <html lang="en">
 <head>
     <title>{% block title %}Recipe Book{% endblock %}</title>
-    <h1>Recipe Book</h1>
+    <header>
+        <h1>Recipe Book</h1>
+        {% if user.is_authenticated %}
+            <form method="POST" action="{% url 'logout' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Logout</button>
+            </form>
+        {% else %}
+            <button><a href="{% url 'login' %}">Login</a></button>
+        {% endif %}
+    </header>
 </head>
 <body>
     <div id="content">
