@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
   <h2>{{ object.name }}</h2>
   <p>Created by: {{ object.author }}</p>
   <p>Created on: {{ object.CreatedOn }}</p>
   <p>Updated on: {{ object.UpdatedOn }}</p>
+  {% for image in object.images.all %}
+    <img src="{{ image.image.url }}" alt="{{ image.description }}">
+  {% endfor %}
   <ul>
       {% for ingredient in object.ingredients.all %}
           <li>{{ ingredient.ingredient.name }}: {{ ingredient.quantity }}</li>
