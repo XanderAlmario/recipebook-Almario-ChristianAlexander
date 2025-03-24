@@ -15,6 +15,9 @@
       {% endfor %}
   </ul>
   <button type="submit">
+    <a href="{% url 'ledger:recipe-image-add' pk=object.pk %}">Add an image</a>
+  </button>
+  <button type="submit">
     <a href="{% url 'ledger:recipe-list' %}">Return to list</a>
   </button>
 {% endblock %}
