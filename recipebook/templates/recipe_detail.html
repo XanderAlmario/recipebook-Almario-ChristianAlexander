@@ -14,4 +14,7 @@
           <li>{{ ingredient.ingredient.name }}: {{ ingredient.quantity }}</li>
       {% endfor %}
   </ul>
+  <button type="submit">
+    <a href="{% url 'ledger:recipe-list' %}">Return to list</a>
+  </button>
 {% endblock %}
