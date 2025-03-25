@@ -41,9 +41,6 @@ class RecipeImageCreateView(LoginRequiredMixin, CreateView):
         ctx['form'] = RecipeImageForm()
         return ctx
 
-    def get_success_url(self):
-        return reverse("ledger:recipe", kwargs={"pk": self.kwargs["pk"]})
-
     def post(self, request, *args, **kwargs):
         pk = self.kwargs['pk']
         form = RecipeImageForm(request.POST, request.FILES)
@@ -61,3 +58,4 @@ class RecipeImageCreateView(LoginRequiredMixin, CreateView):
             context = self.get_context_data(**kwargs)
             context['form'] = form
             return self.render_to_response(context)
+    
